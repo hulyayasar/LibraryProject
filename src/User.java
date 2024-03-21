@@ -1,5 +1,5 @@
 
-public abstract class User {
+public class User {
 
 
 ManagementTeam mt;
@@ -9,9 +9,16 @@ private boolean isFaculty;
 private boolean isStudent;
 private Registration registration;
 
+private String password;
 
-    public User(String name, boolean isFaculty, boolean isStudent, Registration registration) {
+private String email;
+
+
+
+    public User(String name, String email, boolean isFaculty, boolean isStudent, String password) {
         this.name = name;
+        this.password = password;
+        this.email = email;
         this.isFaculty = isFaculty;
         this.isStudent = isStudent;
         this.registration = registration;
