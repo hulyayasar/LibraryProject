@@ -1,10 +1,23 @@
-
-public class CreditDebit extends Payment {
+public class CreditDebit implements Payment {
 
 	
-	int pin;
+	private String name;
+	private String cardNumber;
+	private String cvv;
+	private String dateOfExpiry;
 	
-	String swipe(int pin){
-		return null;
+	CreditDebit(String name, String ccNum, String cvv, String expiryDate){
+		this.name=name;
+		this.cardNumber=ccNum;
+		this.cvv=cvv;
+		this.dateOfExpiry=expiryDate;
+	}
+
+	@Override
+	public String pay(double amount) {
+		
+		 return amount +" paid with credit/debit card";
+		
 	}
 }
+

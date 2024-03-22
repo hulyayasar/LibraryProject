@@ -1,3 +1,166 @@
+//
+//import javax.swing.*;
+//import javax.swing.border.EmptyBorder;
+//import java.awt.*;
+//import java.awt.event.ActionEvent;
+//import java.awt.event.ActionListener;
+//import java.util.ArrayList;
+//import java.util.List;
+//
+//public class MainFrame extends JFrame {
+//    private DefaultListModel<Item> listModel;
+//    private JList<Item> itemList;
+//    private JButton addToCartButton;
+//    private JButton checkoutButton;
+//    private JButton addItemButton;
+//    private User user;
+//    private List<Item> cart;
+//
+//    public MainFrame(User user) {
+//        this.user = user;
+//        setTitle("Main Frame");
+//        setSize(400, 300);
+//        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+//
+//        listModel = new DefaultListModel<>();
+//        itemList = new JList<>(listModel);
+//        addToCartButton = new JButton("Add to Cart");
+//        checkoutButton = new JButton("Checkout");
+//        addItemButton = new JButton("Add Item");
+//        cart = new ArrayList<>();
+//
+//        addToCartButton.addActionListener(new ActionListener() {
+//            @Override
+//            public void actionPerformed(ActionEvent e) {
+//                int selectedIndex = itemList.getSelectedIndex();
+//                if (selectedIndex != -1) { // Check if an item is selected
+//                    Item selectedItem = itemList.getModel().getElementAt(selectedIndex);
+//                    cart.add(selectedItem); // Add the selected item to the cart list
+//                    JOptionPane.showMessageDialog(null, "Item added to cart.");
+//                } else {
+//                    JOptionPane.showMessageDialog(null, "Please select an item to add to cart.");
+//                }
+//            }
+//        });
+//
+//        checkoutButton.addActionListener(new ActionListener() {
+//            @Override
+//            public void actionPerformed(ActionEvent e) {
+//                // Show cart window
+//                showCart();
+//            }
+//        });
+//
+//        addItemButton.addActionListener(new ActionListener() {
+//            @Override
+//            public void actionPerformed(ActionEvent e) {
+//                // Show AddItemForm
+//                AddItemForm addItemForm = new AddItemForm();
+//                addItemForm.setVisible(true);
+//            }
+//        });
+//
+//        setLayout(new BorderLayout());
+//        JPanel buttonPanel = new JPanel(new FlowLayout());
+//        buttonPanel.add(addToCartButton);
+//        buttonPanel.add(checkoutButton);
+//        buttonPanel.add(addItemButton);
+//        add(buttonPanel, BorderLayout.NORTH);
+//        add(new JScrollPane(itemList), BorderLayout.CENTER);
+//
+//        // Load items
+//        loadItems();
+//
+//        // Customize list cell renderer
+//        itemList.setCellRenderer(new ItemListCellRenderer());
+//    }
+//
+//    private void loadItems() {
+//        List<Item> items = ItemDatabase.loadItems();
+//        for (Item item : items) {
+//            listModel.addElement(item);
+//        }
+//    }
+//
+//
+//    private void showCart() {
+//        JFrame cartFrame = new JFrame("Cart");
+//        cartFrame.setSize(300, 250);
+//        JPanel cartPanel = new JPanel(new BorderLayout());
+//        DefaultListModel<Item> cartListModel = new DefaultListModel<>();
+//        JList<Item> cartList = new JList<>(cartListModel);
+//        double totalPrice = calculateTotalPrice(); // Calculate total price
+//        JLabel totalPriceLabel = new JLabel("Total Price: $" + totalPrice); // Display total price
+//        JButton confirmOrderButton = new JButton("Confirm Order");
+//        confirmOrderButton.addActionListener(new ActionListener() {
+//            @Override
+//            public void actionPerformed(ActionEvent e) {
+//                // Show bought items and paid price upon confirming the order
+//                showBoughtItems(cartListModel, totalPrice);
+//            }
+//        });
+//
+//        for (Item item : cart) {
+//            cartListModel.addElement(item);
+//        }
+//
+//        cartList.setCellRenderer(new ItemListCellRenderer());
+//        cartPanel.add(new JScrollPane(cartList), BorderLayout.CENTER);
+//        cartPanel.add(totalPriceLabel, BorderLayout.NORTH);
+//        cartPanel.add(confirmOrderButton, BorderLayout.SOUTH);
+//        cartFrame.add(cartPanel);
+//        cartFrame.setVisible(true);
+//    }
+//
+//    private double calculateTotalPrice() {
+//        double totalPrice = 0.0;
+//        for (Item item : cart) {
+//            totalPrice += item.getPrice();
+//        }
+//        return totalPrice;
+//    }
+//
+//
+//    private void showBoughtItems(DefaultListModel<Item> cartListModel, double totalPrice) {
+//        JFrame boughtItemsFrame = new JFrame("Bought Items");
+//        boughtItemsFrame.setSize(300, 250);
+//        JPanel boughtItemsPanel = new JPanel(new BorderLayout());
+//        JList<Item> boughtItemsList = new JList<>(cartListModel);
+//        JLabel totalPriceLabel = new JLabel("Total Paid Price: $" + totalPrice);
+//
+//        boughtItemsList.setCellRenderer(new ItemListCellRenderer()); // Set custom cell renderer
+//        boughtItemsPanel.add(new JScrollPane(boughtItemsList), BorderLayout.CENTER);
+//        boughtItemsPanel.add(totalPriceLabel, BorderLayout.SOUTH);
+//        boughtItemsFrame.add(boughtItemsPanel);
+//        boughtItemsFrame.setVisible(true);
+//    }
+//
+//    class ItemListCellRenderer extends JLabel implements ListCellRenderer<Item> {
+//        public ItemListCellRenderer() {
+//            setOpaque(true);
+//        }
+//
+//        @Override
+//        public Component getListCellRendererComponent(JList<? extends Item> list, Item item, int index,
+//                                                      boolean isSelected, boolean cellHasFocus) {
+//            setText(item.getName() + " by " + item.getAuthor() + " - Price: $" + item.getPrice());
+//            setBackground(isSelected ? list.getSelectionBackground() : list.getBackground());
+//            setForeground(isSelected ? list.getSelectionForeground() : list.getForeground());
+//            return this;
+//        }
+//    }
+//
+//    public static void main(String[] args) {
+//        SwingUtilities.invokeLater(new Runnable() {
+//            @Override
+//            public void run() {
+//                User student = new User("John Doe", "john@example.com", false, true, "password");
+//                MainFrame mainFrame = new MainFrame(student);
+//                mainFrame.setVisible(true);
+//            }
+//        });
+//    }
+//}
 
 import javax.swing.*;
 import javax.swing.border.EmptyBorder;
@@ -15,6 +178,7 @@ public class MainFrame extends JFrame {
     private JButton addItemButton;
     private User user;
     private List<Item> cart;
+    Payment payment;
 
     public MainFrame(User user) {
         this.user = user;
@@ -96,7 +260,8 @@ public class MainFrame extends JFrame {
             @Override
             public void actionPerformed(ActionEvent e) {
                 // Show bought items and paid price upon confirming the order
-                showBoughtItems(cartListModel, totalPrice);
+              // showBoughtItems(cartListModel, totalPrice);
+            	selectPaymentMethod(cartListModel, totalPrice);
             }
         });
 
@@ -119,6 +284,129 @@ public class MainFrame extends JFrame {
         }
         return totalPrice;
     }
+    
+    private void selectPaymentMethod(DefaultListModel<Item> cartListModel, double totalPrice) {
+    	 JFrame payFrame = new JFrame("Payment Method");
+         payFrame.setSize(300, 250);
+         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+         JButton cash = new JButton("Cash");
+         cash.addActionListener(new ActionListener() {
+             @Override
+             public void actionPerformed(ActionEvent e) {
+                 // Show bought items and paid price upon confirming the order
+                // showBoughtItems(cartListModel, totalPrice);
+             	cashSelected(cartListModel, totalPrice);
+             }
+         });
+
+         JButton creditDebit = new JButton("Credit/Debit");
+         creditDebit.addActionListener(new ActionListener() {
+             @Override
+             public void actionPerformed(ActionEvent e) {
+                 // Show bought items and paid price upon confirming the order
+                // showBoughtItems(cartListModel, totalPrice);
+             	creditDebitSelected1(cartListModel, totalPrice);
+             }
+         });
+         setLayout(new BorderLayout());
+         JPanel buttonPanel = new JPanel(new FlowLayout());
+         buttonPanel.add(cash);
+         buttonPanel.add(creditDebit);
+         add(buttonPanel, BorderLayout.NORTH);
+         payFrame.add(buttonPanel);
+         payFrame.setVisible(true);
+         
+
+    }
+    
+    
+    private void cashSelected(DefaultListModel<Item> cartListModel, double totalPrice) {
+    	 JFrame boughtItemsFrame = new JFrame("Bought Items");
+    	 setSize(400, 300);
+         boughtItemsFrame.setSize(300, 250);
+         JPanel boughtItemsPanel = new JPanel(new BorderLayout());
+         JList<Item> boughtItemsList = new JList<>(cartListModel);
+         payment = new Cash();
+         JLabel totalPriceLabel = new JLabel(payment.pay(totalPrice));
+
+         boughtItemsList.setCellRenderer(new ItemListCellRenderer()); // Set custom cell renderer
+        boughtItemsPanel.add(new JScrollPane(boughtItemsList), BorderLayout.CENTER);
+         boughtItemsPanel.add(totalPriceLabel, BorderLayout.SOUTH);
+        boughtItemsFrame.add(boughtItemsPanel);
+         boughtItemsFrame.setVisible(true);
+    }
+    
+    private void creditDebitSelected1(DefaultListModel<Item> cartListModel, double totalPrice) {
+    	 JFrame boughtItemsFrame = new JFrame("Credit/Debit");
+    	 setSize(400, 300);
+         boughtItemsFrame.setSize(300, 250);
+         JPanel boughtItemsPanel = new JPanel(new GridLayout(5,2));
+         
+          JButton btnConfirm;
+         
+
+         // Name field
+         JLabel billname =new JLabel("Billing Name:");
+         JTextField txtName = new JTextField();
+         boughtItemsPanel.add(txtName);
+         
+
+         // cardNumber field
+         JLabel cardNumb = new JLabel("Card Number:");
+        JTextField txtCardNum = new JTextField();
+         add(txtCardNum);
+
+         // cvv field
+          JLabel cvvs =new JLabel("CVV:");
+          JTextField txtcvv = new JTextField();
+         add(txtcvv);
+         
+         //DateOfExpiry
+          JLabel DOE = new JLabel("Date Of Expiry(MM:YY):");
+         JTextField txtDateOfExpiry = new JTextField();
+         add(txtDateOfExpiry);
+         
+         
+         String name = txtName.getText();
+         String cardNum = txtCardNum.getText();
+         String cvv = txtcvv.getText();
+         String DateOfExpiry = txtDateOfExpiry.getText();
+         
+         btnConfirm = new JButton("Confirm Purchase");
+         btnConfirm.addActionListener(new ActionListener() {
+             public void actionPerformed(ActionEvent e) {
+            	 creditDebitSelected2(cartListModel, totalPrice,name,cardNum,cvv,DateOfExpiry);
+             }
+         });
+         add(btnConfirm);
+         boughtItemsPanel.add(billname, BorderLayout.WEST);
+         boughtItemsPanel.add(txtName, BorderLayout.EAST);
+         boughtItemsPanel.add(cardNumb, BorderLayout.WEST);
+         boughtItemsPanel.add(txtCardNum, BorderLayout.EAST);
+         boughtItemsPanel.add(cvvs, BorderLayout.WEST);
+         boughtItemsPanel.add(txtcvv, BorderLayout.EAST);
+         boughtItemsPanel.add(DOE, BorderLayout.WEST);
+         boughtItemsPanel.add(txtDateOfExpiry, BorderLayout.EAST);
+         boughtItemsPanel.add(btnConfirm, BorderLayout.EAST);
+         boughtItemsFrame.add(boughtItemsPanel); 
+         boughtItemsFrame.setVisible(true); 
+    }
+    
+    private void creditDebitSelected2(DefaultListModel<Item> cartListModel, double totalPrice,String name, String cardNum ,String cvv, String DateOfExpiry) {
+   	 JFrame boughtItemsFrame = new JFrame("Bought Items");
+   	 setSize(400, 300);
+        boughtItemsFrame.setSize(300, 250);
+        JPanel boughtItemsPanel = new JPanel(new BorderLayout());
+        JList<Item> boughtItemsList = new JList<>(cartListModel);
+        payment = new CreditDebit(name,cardNum,cvv,DateOfExpiry);
+        JLabel totalPriceLabel = new JLabel(payment.pay(totalPrice));
+
+        boughtItemsList.setCellRenderer(new ItemListCellRenderer()); // Set custom cell renderer
+        boughtItemsPanel.add(new JScrollPane(boughtItemsList), BorderLayout.CENTER);
+        boughtItemsPanel.add(totalPriceLabel, BorderLayout.SOUTH);
+        boughtItemsFrame.add(boughtItemsPanel);
+        boughtItemsFrame.setVisible(true);
+   }
 
 
     private void showBoughtItems(DefaultListModel<Item> cartListModel, double totalPrice) {
@@ -161,4 +449,3 @@ public class MainFrame extends JFrame {
         });
     }
 }
-
