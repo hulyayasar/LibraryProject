@@ -57,7 +57,7 @@ public class RegisterForm extends JFrame {
         btnCancel = new JButton("Cancel");
         btnCancel.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-                dispose(); // Close the window
+                dispose();
             }
         });
         add(btnCancel);
