@@ -21,12 +21,11 @@ public class ObserverGUI extends JFrame {
             @Override
             public void actionPerformed(ActionEvent e) {
                 List<String> dueItems = systemInterface.viewDueItems();
-                // Display due items to the user, perhaps in a list component
+
             }
         });
 
-        // Layout code and adding components...
-        // ...
+
 
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         pack();
