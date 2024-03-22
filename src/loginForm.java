@@ -42,9 +42,7 @@ public class loginForm extends JFrame {
 	            }
 	        });
 	        add(btnRegister);
-
 	        
-	     // Login button
 	        btnLogIn = new JButton("Login");
 	        btnLogIn.addActionListener(new ActionListener() {
 	            public void actionPerformed(ActionEvent e) {

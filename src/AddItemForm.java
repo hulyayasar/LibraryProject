@@ -15,6 +15,8 @@ public class AddItemForm extends JFrame {
     private JCheckBox disabledCheckBox;
     private JCheckBox buyableCheckBox;
     private JButton addButton;
+    
+    
 
     public AddItemForm() {
         setTitle("Add Item");
