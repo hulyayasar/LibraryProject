@@ -57,7 +57,7 @@ private String email;
     }
 
    
-    public abstract void tryRegister(User user);
+    //public abstract void tryRegister(User user);
 
 	public ManagementTeam getMt() {
 		return mt;
@@ -65,6 +65,23 @@ private String email;
 
 	public void setMt(ManagementTeam mt) {
 		this.mt = mt;
+	}
+
+	public Object getEmail() {
+		
+		return email;
+	}
+
+	public String getPassword() {
+		return password;
+	}
+
+	public void setPassword(String password) {
+		this.password = password;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
 	}
 
 

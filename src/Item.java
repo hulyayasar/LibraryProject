@@ -1,5 +1,5 @@
 
-public abstract class Item {
+public  class Item {
 
 	 private String name;
      private int itemID;
@@ -9,8 +9,11 @@ public abstract class Item {
      private boolean isDisabled;
      private boolean buyable;
      private int rentalDuration; 
-
      
+
+     public Item() {
+    	 
+     }
        
         public Item(String name, int itemID, String author, double price, String type, boolean isDisabled, boolean buyable) {
             this.name = name;

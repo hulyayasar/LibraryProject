@@ -1,0 +1,4 @@
+name,itemID,author,price,type,isDisabled,buyable
+CS texbook,1001,Jk,99.0,PhysicalItem,false,true
+Becoming Steve Jobs,1111,KK,101.0,PhysicalItem,false,true
+book3,123,hh,33.0,PhysicalItem,false,true
