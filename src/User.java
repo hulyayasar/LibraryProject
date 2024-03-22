@@ -13,6 +13,9 @@ private String password;
 
 private String email;
 
+public User() {
+	
+}
 
 
     public User(String name, String email, boolean isFaculty, boolean isStudent, String password) {
@@ -82,6 +85,11 @@ private String email;
 
 	public void setEmail(String email) {
 		this.email = email;
+	}
+
+	public void tryRegister(User user) {
+		// TODO Auto-generated method stub
+		
 	}
 
 

@@ -1,6 +1,8 @@
 
 public class Vistor extends User{
 
+
+
 	@Override
 	public String getName() {
 		// TODO Auto-generated method stub

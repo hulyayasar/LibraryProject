@@ -9,11 +9,11 @@ public class Faculty extends User{
 	List viewCourses() {return null;}
 	List facultyCourses() {return null;}
 	void newEditionTextbook(){}
-	@Override
-	public String getName() {
-		// TODO Auto-generated method stub
-		return this.name;
-	}
+//	@Override
+//	public String getName() {
+//		// TODO Auto-generated method stub
+//		return super.getName();
+//	}
 	@Override
 	public void tryRegister(User user) {
 		// TODO Auto-generated method stub
