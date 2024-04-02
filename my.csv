@@ -1,0 +1,7 @@
+name,itemID,author,price,type,UID
+Becoming Steve Jobs,1111,KK,101.0,PhysicalItem,1
+CS texbook,1001,Jk,99.0,PhysicalItem,1
+book3,123,hh,33.0,PhysicalItem,1
+CS texbook,1001,Jk,99.0,PhysicalItem,2
+Becoming Steve Jobs,1111,KK,101.0,PhysicalItem,2
+HockeyMagazine,13,SBC,0.0,MagazineNewspaper,2

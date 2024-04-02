@@ -12,12 +12,12 @@ import javax.swing.SwingUtilities;
 
 public class loginForm extends JFrame {
 	 private JTextField txtName, txtEmail, txtPassword;
-	 private JButton btnRegister, btnLogIn;
+	 private JButton btnRegister, btnLogIn,btnV;
 	 private RegisterForm reg;
 	
 	public loginForm() {
 		  setTitle("Login");
-		  setSize(450, 200);
+		  setSize(550, 200);
 	        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	        setLayout(new GridLayout(4, 2));
 	        
@@ -32,16 +32,16 @@ public class loginForm extends JFrame {
 	        add(txtPassword);
 	        
 	        
-	        
-	        // Register button
-	        btnRegister = new JButton("Register");
-	        btnRegister.addActionListener(new ActionListener() {
+	        btnV = new JButton("Visit");
+	        btnV.addActionListener(new ActionListener() {
 	            public void actionPerformed(ActionEvent e) {
-	                reg = new RegisterForm();
-	                reg.setVisible(true);
+	            	MainFrame mainFrame = new MainFrame(new Visitor());
+                    mainFrame.setVisible(true);
+	                dispose(); /// REMEMEBER THIS
 	            }
 	        });
-	        add(btnRegister);
+	        add(btnV);
+
 	        
 	        btnLogIn = new JButton("Login");
 	        btnLogIn.addActionListener(new ActionListener() {
@@ -63,10 +63,21 @@ public class loginForm extends JFrame {
 	        
 	        
 	        
+	        // Register button
+	        btnRegister = new JButton("Register");
+	        btnRegister.addActionListener(new ActionListener() {
+	            public void actionPerformed(ActionEvent e) {
+	                reg = new RegisterForm();
+	                reg.setVisible(true);
+	                dispose(); /// REMEMEBER THIS
+	            }
+	        });
+	        add(btnRegister); 
+	        
 
 	}
 	
-	private boolean authenticateUser(String name, String password) {
+	public boolean authenticateUser(String name, String password) {
         List<User> users = UserDatabase.loadUsers();
         for (User user : users) {
             if (user.getName().equals(name) && user.getPassword().equals(password)) {

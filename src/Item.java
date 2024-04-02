@@ -5,7 +5,7 @@ public  class Item {
      private int itemID;
      private String author;
      private double price;
-     private String type;
+     public String type;
      private boolean isDisabled;
      private boolean buyable;
      private int rentalDuration; 
@@ -60,7 +60,7 @@ public  class Item {
         }
 
         public String getType() {
-            return type;
+            return this.type;
         }
 
         public void setType(String type) {

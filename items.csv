@@ -2,3 +2,8 @@ name,itemID,author,price,type,isDisabled,buyable
 CS texbook,1001,Jk,99.0,PhysicalItem,false,true
 Becoming Steve Jobs,1111,KK,101.0,PhysicalItem,false,true
 book3,123,hh,33.0,PhysicalItem,false,true
+FinancialNewspaper,333,GNN,0.0,MagazineNewspaper,false,true
+HockeyMagazine,13,SBC,0.0,MagazineNewspaper,false,true
+fantasy,36,jg,0.0,PhysicalItem,false,false
+
+

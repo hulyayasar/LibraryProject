@@ -3,16 +3,34 @@ public class Student extends User{
 
 
 
+	public Student(String name, String email, String password) {
+		this.email =email;
+		this.name = name;
+		this.name = name;
+		this.password = password;
+		this.ID = IDCounter++;
+		}
+
 	@Override
-	public String getName() {
-		// TODO Auto-generated method stub
-		return null;
+	public int getID() {return this.ID;}
+
+	@Override
+    public String getName() {
+        return this.name;
+    }
+	@Override
+	public String getEmail() {
+		
+		return this.email;
+	}
+	@Override
+	public String getPassword() {
+		return this.password;
 	}
 
 	@Override
-	public void tryRegister(User user) {
-		// TODO Auto-generated method stub
-		
+	public void setEmail(String email) {
+		this.email = email;
 	}
 
 }

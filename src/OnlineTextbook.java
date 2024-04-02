@@ -26,4 +26,10 @@ public class OnlineTextbook extends OnlineItem {
 	public void setTextbooksLeft(int textbooksLeft) {
 		this.textbooksLeft = textbooksLeft;
 	}
+	public String getType() {
+		this.type = "OnlineTextbook";
+		return this.type;
+		
+		
+	}
 }

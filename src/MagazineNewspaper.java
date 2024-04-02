@@ -27,4 +27,11 @@ public class MagazineNewspaper extends OnlineItem {
 	public void setSubscriptiontime(int subscriptiontime) {
 		this.subscriptiontime = subscriptiontime;
 	}
+	
+	public String getType() {
+		this.type = "MagazineNewspaper";
+		return this.type;
+		
+		
+	}
 }

@@ -29,4 +29,11 @@ public class PhysicalItem extends Item {
 	public void setItemAmountLeft(int itemAmountLeft) {
 		this.itemAmountLeft = itemAmountLeft;
 	}
+	
+	public String getType() {
+		this.type = "PhysicalItem";
+		return this.type;
+		
+		
+	}
 }

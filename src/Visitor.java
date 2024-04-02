@@ -1,5 +1,5 @@
 
-public class Vistor extends User{
+public class Visitor extends User{
 
 
 

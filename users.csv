@@ -1,8 +1,3 @@
-name,email,isFaculty,isStudent,password
-james,bond,true,false,123
-mark,mark@gmail.com,false,true,2233
-alex,alex@gmail.com,true,false,222
-dimond,dimond@11.com,true,false,222
-karen,hey@gmail.com,true,false,123
-karen33,karen33@gmail.com,false,false,123
-numan,numan@gmail.com,false,true,111
+name,email,type,password
+john,123,St,456
+mark,xyz,F,456
