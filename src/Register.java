@@ -7,7 +7,8 @@ public class Register implements Registration {
 	private int id;
 	private String email;
 	private String password;
-	public int getID() {return 0;}
+	public int getID() {
+		return this.id;}
 	
 	String getEmail() {return null;}
 	String getPassword() {return null;}
@@ -15,7 +16,13 @@ public class Register implements Registration {
 	@Override
 	public String register(User user) {
 		// TODO Auto-generated method stub
-		return null;
+		user.email = email;
+		user.ID = id;
+		user.email = email;
+
+
+		return user.toString();
+
 	}
 	
 	
