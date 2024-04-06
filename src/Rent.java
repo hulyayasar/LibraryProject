@@ -8,7 +8,9 @@ public class Rent {
 	int numOfItemsRented;
 	
 	boolean subscribe(Item item, User user) {return false;}
-	double calculateOverdue(User user) {return 0.0;}
+	double calculateOverdue(User user) {
+		return this.OverdueCost * this.numOfItemsRented;
+	}
 	String requestNewBook(User user, Item item ) {return null;}
 	String payOrRentItem() {return null;}
 	String cancelSubscription(Item item, User user) {return null;}

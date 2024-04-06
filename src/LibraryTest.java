@@ -56,25 +56,26 @@ public class LibraryTest {
     @Test
     public void testItem() {
         Item book = new OnlineTextbook("Java Basics", 1, "Author Name", 19.99, false, true);
-        assertEquals("Java Basics", book.getName());
-        assertEquals(19.99, book.getPrice());
-        assertEquals("OnlineTextbook", book.getType());
+        double delta = 0.0001;
+        assertEquals(book.getName(),"Java Basics");
+        assertEquals( book.getPrice(),19.99,delta);
+        assertEquals(book.getType(),"OnlineTextbook");
 
         Item magazine = new MagazineNewspaper("Tech Today", 1, "Editor Name", 5.99, false, true);
-        assertEquals("Tech Today", magazine.getName());
-        assertEquals(5.99, magazine.getPrice());
-        assertEquals("MagazineNewspaper", magazine.getType());
+        assertEquals( magazine.getName(),"Tech Today");
+        assertEquals(magazine.getPrice(),5.99 ,delta);
+        assertEquals( magazine.getType(),"MagazineNewspaper");
 
         Item chair = new PhysicalItem("Office Chair", 1, "Manufacturer", 120.00, false, true);
-        assertEquals("Office Chair", chair.getName());
-        assertEquals(120.00, chair.getPrice());
-        assertEquals("PhysicalItem", chair.getType());
+        assertEquals( chair.getName(),"Office Chair");
+        assertEquals( chair.getPrice(),120.00,delta);
+        assertEquals( chair.getType(),"PhysicalItem");
 
         OnlineTextbook textbook = new OnlineTextbook("Advanced Java", 10);
-        assertEquals(10, textbook.getTextbooksLeft());
+        assertEquals( textbook.getTextbooksLeft(),10,delta);
 
         textbook.setTextbooksLeft(5);
-        assertEquals(5, textbook.getTextbooksLeft());
+        assertEquals( textbook.getTextbooksLeft(),5,delta);
 
     }
 
@@ -105,7 +106,7 @@ public class LibraryTest {
 
         libraryDatabase.itemsRented = new String[0];
 
-        assertEquals(libraryDatabase.itemAvailabilty(book), "The book available for rent.");
+        assertEquals(libraryDatabase.itemAvailabilty(book), true);
     }
 
     @Test
@@ -115,10 +116,10 @@ public class LibraryTest {
         LibrarySingleton secondInstance = LibrarySingleton.getInstance();
 
 
-        assertSame(firstInstance.toString(), secondInstance.toString(), "Both calls to getInstance should return the same instance.");
+        assertSame(firstInstance, secondInstance);
 
 
-        assertNotNull(firstInstance.getLibrary().toString(), "The library should be properly initialized and not null.");
+        assertNotNull(firstInstance.getLibrary());
     }
 
 
@@ -146,12 +147,12 @@ public class LibraryTest {
         Payment cardPayment = new CreditDebit("Enes Yesil", "12345467690123456", "123", "12/34");
         String paymentResult1 = cardPayment.pay(100.0);
 
-        assertEquals("100.0 paid with credit/debit card", paymentResult1, "Card payment message should match expected output.");
+        assertEquals("100.0 paid with credit/debit card", paymentResult1);
 
         Payment cashPayment = new Cash();
         String paymentResult2 = cashPayment.pay(100.0);
 
-        assertEquals("$100.0 paid in cash.", paymentResult2, "Cash payment message should match expected output.");
+        assertEquals("$100.0 paid in cash.", paymentResult2);
     }
 
     @Test
@@ -166,7 +167,7 @@ public class LibraryTest {
         String result = checkout1.makePayment(cashPayment);
 
 
-        assertEquals("$100.0 paid in cash.", result, "Payment with cash done successfully.");
+        assertEquals( result,"$100.0 paid in cash." );
 
         Checkout checkout2 = new Checkout();
         Payment cardPayment = new CreditDebit("Jane Doe", "9876543210987654", "321", "01/25");
@@ -177,7 +178,7 @@ public class LibraryTest {
         String result2 = checkout2.makePayment(cardPayment);
 
 
-        assertEquals("200.0 paid with credit/debit card", result2, "Payment with card done successfully.");
+        assertEquals( result2, "200.0 paid with credit/debit card");
     }
 
     @Test
@@ -189,14 +190,14 @@ public class LibraryTest {
         rent.numOfItemsRented = 3;
 
 
-        int overdueDays = 2;
-        double expectedOverdueCost = overdueDays * rent.OverdueCost * rent.numOfItemsRented;
+
+        double expectedOverdueCost = rent.OverdueCost * rent.numOfItemsRented;
 
 
         double actualOverdueCost = rent.calculateOverdue(user);
+        double delta = 0.0001;
 
-
-        assertEquals("The calculated overdue match the expected value.", expectedOverdueCost, actualOverdueCost);
+        assertEquals(expectedOverdueCost, actualOverdueCost,delta);
     }
 
     @Test

@@ -8,7 +8,7 @@ public class OnlineWallet implements Payment {
 	@Override
 	public String pay(double amount) {
 		
-		return null;
+		return psw;
 	}
 	
 }
