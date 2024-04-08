@@ -1,0 +1,235 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../../../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../../../jacoco-resources/report.gif" type="image/gif"/><title>RegressionTest0.java</title><link rel="stylesheet" href="../../../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../../../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../../../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../../../index.html" class="el_report">Merged (Apr. 8, 2024 9:28:37 a.m.)</a> &gt; <a href="../../index.html" class="el_group">shared</a> &gt; <a href="../index.html" class="el_bundle">randoopTest</a> &gt; <a href="index.source.html" class="el_package">default</a> &gt; <span class="el_source">RegressionTest0.java</span></div><h1>RegressionTest0.java</h1><pre class="source lang-java linenums">
+import org.junit.FixMethodOrder;
+import org.junit.Test;
+import org.junit.runners.MethodSorters;
+
+@FixMethodOrder(MethodSorters.NAME_ASCENDING)
+<span class="fc" id="L7">public class RegressionTest0 {</span>
+
+<span class="fc" id="L9">    public static boolean debug = false;</span>
+
+    @Test
+    public void test01() throws Throwable {
+<span class="pc bpc" id="L13" title="1 of 2 branches missed.">        if (debug)</span>
+<span class="nc" id="L14">            System.out.format(&quot;%n%s%n&quot;, &quot;RegressionTest0.test01&quot;);</span>
+<span class="fc" id="L15">        java.util.List&lt;Item&gt; itemList0 = ItemDatabase.loadItems();</span>
+<span class="fc" id="L16">        org.junit.Assert.assertNotNull(itemList0);</span>
+<span class="fc" id="L17">    }</span>
+
+    @Test
+    public void test02() throws Throwable {
+<span class="pc bpc" id="L21" title="1 of 2 branches missed.">        if (debug)</span>
+<span class="nc" id="L22">            System.out.format(&quot;%n%s%n&quot;, &quot;RegressionTest0.test02&quot;);</span>
+<span class="fc" id="L23">        PhysicalItem physicalItem6 = new PhysicalItem(&quot;hi!&quot;, (int) (short) -1, &quot;&quot;, (double) 1, false, false);</span>
+<span class="fc" id="L24">        User user7 = null;</span>
+        // The following exception was thrown during execution in test generation
+        try {
+<span class="nc" id="L27">            ItemDatabase.addItem((Item) physicalItem6, user7);</span>
+<span class="nc" id="L28">            org.junit.Assert.fail(&quot;Expected exception of type java.lang.NullPointerException; message: Cannot invoke \&quot;User.getID()\&quot; because \&quot;&lt;parameter2&gt;\&quot; is null&quot;);</span>
+<span class="pc" id="L29">        } catch (java.lang.NullPointerException e) {</span>
+            // Expected exception.
+        }
+<span class="fc" id="L32">    }</span>
+
+    @Test
+    public void test03() throws Throwable {
+<span class="pc bpc" id="L36" title="1 of 2 branches missed.">        if (debug)</span>
+<span class="nc" id="L37">            System.out.format(&quot;%n%s%n&quot;, &quot;RegressionTest0.test03&quot;);</span>
+<span class="fc" id="L38">        PhysicalItem physicalItem6 = new PhysicalItem(&quot;hi!&quot;, (int) (short) -1, &quot;&quot;, (double) 1, false, false);</span>
+<span class="fc" id="L39">        User user7 = null;</span>
+        // The following exception was thrown during execution in test generation
+        try {
+<span class="nc" id="L42">            ItemDatabase.remove((Item) physicalItem6, user7);</span>
+<span class="nc" id="L43">            org.junit.Assert.fail(&quot;Expected exception of type java.lang.NullPointerException; message: Cannot read field \&quot;ID\&quot; because \&quot;&lt;parameter2&gt;\&quot; is null&quot;);</span>
+<span class="pc" id="L44">        } catch (java.lang.NullPointerException e) {</span>
+            // Expected exception.
+        }
+<span class="fc" id="L47">    }</span>
+
+    @Test
+    public void test04() throws Throwable {
+<span class="pc bpc" id="L51" title="1 of 2 branches missed.">        if (debug)</span>
+<span class="nc" id="L52">            System.out.format(&quot;%n%s%n&quot;, &quot;RegressionTest0.test04&quot;);</span>
+<span class="fc" id="L53">        User user0 = new User();</span>
+<span class="fc" id="L54">    }</span>
+
+    @Test
+    public void test05() throws Throwable {
+<span class="pc bpc" id="L58" title="1 of 2 branches missed.">        if (debug)</span>
+<span class="nc" id="L59">            System.out.format(&quot;%n%s%n&quot;, &quot;RegressionTest0.test05&quot;);</span>
+<span class="fc" id="L60">        Item item0 = new Item();</span>
+<span class="fc" id="L61">        java.lang.String str1 = item0.type;</span>
+<span class="fc" id="L62">        org.junit.Assert.assertNull(str1);</span>
+<span class="fc" id="L63">    }</span>
+
+    @Test
+    public void test06() throws Throwable {
+<span class="pc bpc" id="L67" title="1 of 2 branches missed.">        if (debug)</span>
+<span class="nc" id="L68">            System.out.format(&quot;%n%s%n&quot;, &quot;RegressionTest0.test06&quot;);</span>
+<span class="fc" id="L69">        PhysicalItem physicalItem2 = new PhysicalItem(&quot;&quot;, &quot;hi!&quot;);</span>
+<span class="fc" id="L70">        int int3 = physicalItem2.getItemAmountLeft();</span>
+<span class="pc bpc" id="L71" title="1 of 2 branches missed.">        org.junit.Assert.assertTrue(&quot;'&quot; + int3 + &quot;' != '&quot; + 0 + &quot;'&quot;, int3 == 0);</span>
+<span class="fc" id="L72">    }</span>
+
+    @Test
+    public void test07() throws Throwable {
+<span class="pc bpc" id="L76" title="1 of 2 branches missed.">        if (debug)</span>
+<span class="nc" id="L77">            System.out.format(&quot;%n%s%n&quot;, &quot;RegressionTest0.test07&quot;);</span>
+<span class="fc" id="L78">        Faculty faculty3 = new Faculty(&quot;&quot;, &quot;&quot;, &quot;hi!&quot;);</span>
+<span class="fc" id="L79">        faculty3.setPassword(&quot;hi!&quot;);</span>
+<span class="fc" id="L80">    }</span>
+
+    @Test
+    public void test08() throws Throwable {
+<span class="pc bpc" id="L84" title="1 of 2 branches missed.">        if (debug)</span>
+<span class="nc" id="L85">            System.out.format(&quot;%n%s%n&quot;, &quot;RegressionTest0.test08&quot;);</span>
+<span class="fc" id="L86">        Item item7 = new Item(&quot;&quot;, (-1), &quot;&quot;, (double) (-1L), &quot;hi!&quot;, false, false);</span>
+<span class="fc" id="L87">        double double8 = item7.getPrice();</span>
+<span class="pc bpc" id="L88" title="1 of 2 branches missed.">        org.junit.Assert.assertTrue(&quot;'&quot; + double8 + &quot;' != '&quot; + (-1.0d) + &quot;'&quot;, double8 == (-1.0d));</span>
+<span class="fc" id="L89">    }</span>
+
+    @Test
+    public void test09() throws Throwable {
+<span class="pc bpc" id="L93" title="1 of 2 branches missed.">        if (debug)</span>
+<span class="nc" id="L94">            System.out.format(&quot;%n%s%n&quot;, &quot;RegressionTest0.test09&quot;);</span>
+<span class="fc" id="L95">        PhysicalItem physicalItem6 = new PhysicalItem(&quot;hi!&quot;, (int) (short) -1, &quot;&quot;, (double) 1, false, false);</span>
+<span class="fc" id="L96">        ItemDatabase.saveItem((Item) physicalItem6);</span>
+<span class="fc" id="L97">        physicalItem6.setType(&quot;&quot;);</span>
+<span class="fc" id="L98">        java.lang.String str10 = physicalItem6.getName();</span>
+<span class="fc" id="L99">        org.junit.Assert.assertEquals(&quot;'&quot; + str10 + &quot;' != '&quot; + &quot;hi!&quot; + &quot;'&quot;, str10, &quot;hi!&quot;);</span>
+<span class="fc" id="L100">    }</span>
+
+    @Test
+    public void test10() throws Throwable {
+<span class="pc bpc" id="L104" title="1 of 2 branches missed.">        if (debug)</span>
+<span class="nc" id="L105">            System.out.format(&quot;%n%s%n&quot;, &quot;RegressionTest0.test10&quot;);</span>
+<span class="fc" id="L106">        PhysicalItem physicalItem6 = new PhysicalItem(&quot;hi!&quot;, (int) (short) -1, &quot;&quot;, (double) 1, false, false);</span>
+<span class="fc" id="L107">        ItemDatabase.saveItem((Item) physicalItem6);</span>
+<span class="fc" id="L108">        physicalItem6.setRentalDuration((int) (short) 100);</span>
+<span class="fc" id="L109">        physicalItem6.setName(&quot;PhysicalItem&quot;);</span>
+<span class="fc" id="L110">    }</span>
+
+    @Test
+    public void test11() throws Throwable {
+<span class="pc bpc" id="L114" title="1 of 2 branches missed.">        if (debug)</span>
+<span class="nc" id="L115">            System.out.format(&quot;%n%s%n&quot;, &quot;RegressionTest0.test11&quot;);</span>
+<span class="fc" id="L116">        SystemInterface systemInterface0 = new SystemInterface();</span>
+<span class="fc" id="L117">    }</span>
+
+    @Test
+    public void test12() throws Throwable {
+<span class="pc bpc" id="L121" title="1 of 2 branches missed.">        if (debug)</span>
+<span class="nc" id="L122">            System.out.format(&quot;%n%s%n&quot;, &quot;RegressionTest0.test12&quot;);</span>
+<span class="fc" id="L123">        PhysicalItem physicalItem6 = new PhysicalItem(&quot;hi!&quot;, (int) (short) -1, &quot;&quot;, (double) 1, false, false);</span>
+<span class="fc" id="L124">        ItemDatabase.saveItem((Item) physicalItem6);</span>
+<span class="fc" id="L125">        double double8 = physicalItem6.getPrice();</span>
+<span class="fc" id="L126">        java.lang.String str9 = physicalItem6.getAuthor();</span>
+<span class="pc bpc" id="L127" title="1 of 2 branches missed.">        org.junit.Assert.assertTrue(&quot;'&quot; + double8 + &quot;' != '&quot; + 1.0d + &quot;'&quot;, double8 == 1.0d);</span>
+<span class="fc" id="L128">        org.junit.Assert.assertEquals(&quot;'&quot; + str9 + &quot;' != '&quot; + &quot;&quot; + &quot;'&quot;, str9, &quot;&quot;);</span>
+<span class="fc" id="L129">    }</span>
+
+    @Test
+    public void test13() throws Throwable {
+<span class="pc bpc" id="L133" title="1 of 2 branches missed.">        if (debug)</span>
+<span class="nc" id="L134">            System.out.format(&quot;%n%s%n&quot;, &quot;RegressionTest0.test13&quot;);</span>
+<span class="fc" id="L135">        PhysicalItem physicalItem6 = new PhysicalItem(&quot;hi!&quot;, (int) (short) -1, &quot;&quot;, (double) 1, false, false);</span>
+<span class="fc" id="L136">        ItemDatabase.saveItem((Item) physicalItem6);</span>
+<span class="fc" id="L137">        physicalItem6.setType(&quot;&quot;);</span>
+<span class="fc" id="L138">        java.lang.String str10 = physicalItem6.getItemLocation();</span>
+<span class="fc" id="L139">        org.junit.Assert.assertNull(str10);</span>
+<span class="fc" id="L140">    }</span>
+
+    @Test
+    public void test14() throws Throwable {
+<span class="pc bpc" id="L144" title="1 of 2 branches missed.">        if (debug)</span>
+<span class="nc" id="L145">            System.out.format(&quot;%n%s%n&quot;, &quot;RegressionTest0.test14&quot;);</span>
+<span class="fc" id="L146">        PhysicalItem physicalItem2 = new PhysicalItem(&quot;PhysicalItem&quot;, &quot;PhysicalItem&quot;);</span>
+<span class="fc" id="L147">    }</span>
+
+    @Test
+    public void test15() throws Throwable {
+<span class="pc bpc" id="L151" title="1 of 2 branches missed.">        if (debug)</span>
+<span class="nc" id="L152">            System.out.format(&quot;%n%s%n&quot;, &quot;RegressionTest0.test15&quot;);</span>
+<span class="fc" id="L153">        PhysicalItem physicalItem6 = new PhysicalItem(&quot;hi!&quot;, (int) (short) -1, &quot;&quot;, (double) 1, false, false);</span>
+<span class="fc" id="L154">        int int7 = physicalItem6.getItemID();</span>
+<span class="fc" id="L155">        Faculty faculty11 = new Faculty(&quot;&quot;, &quot;&quot;, &quot;hi!&quot;);</span>
+<span class="fc" id="L156">        ItemDatabase.remove((Item) physicalItem6, (User) faculty11);</span>
+<span class="fc" id="L157">        java.lang.String str13 = faculty11.getName();</span>
+<span class="pc bpc" id="L158" title="1 of 2 branches missed.">        org.junit.Assert.assertTrue(&quot;'&quot; + int7 + &quot;' != '&quot; + (-1) + &quot;'&quot;, int7 == (-1));</span>
+<span class="fc" id="L159">        org.junit.Assert.assertEquals(&quot;'&quot; + str13 + &quot;' != '&quot; + &quot;&quot; + &quot;'&quot;, str13, &quot;&quot;);</span>
+<span class="fc" id="L160">    }</span>
+
+    @Test
+    public void test16() throws Throwable {
+<span class="pc bpc" id="L164" title="1 of 2 branches missed.">        if (debug)</span>
+<span class="nc" id="L165">            System.out.format(&quot;%n%s%n&quot;, &quot;RegressionTest0.test16&quot;);</span>
+<span class="fc" id="L166">        Checkout checkout0 = new Checkout();</span>
+<span class="fc" id="L167">    }</span>
+
+    @Test
+    public void test17() throws Throwable {
+<span class="pc bpc" id="L171" title="1 of 2 branches missed.">        if (debug)</span>
+<span class="nc" id="L172">            System.out.format(&quot;%n%s%n&quot;, &quot;RegressionTest0.test17&quot;);</span>
+<span class="fc" id="L173">        UserDatabase userDatabase0 = new UserDatabase();</span>
+<span class="fc" id="L174">    }</span>
+
+    @Test
+    public void test18() throws Throwable {
+<span class="pc bpc" id="L178" title="1 of 2 branches missed.">        if (debug)</span>
+<span class="nc" id="L179">            System.out.format(&quot;%n%s%n&quot;, &quot;RegressionTest0.test18&quot;);</span>
+<span class="fc" id="L180">        Faculty faculty3 = new Faculty(&quot;&quot;, &quot;&quot;, &quot;hi!&quot;);</span>
+<span class="fc" id="L181">        boolean boolean4 = faculty3.isStaff();</span>
+<span class="fc" id="L182">        java.lang.String str5 = faculty3.getName();</span>
+<span class="fc" id="L183">        Faculty faculty9 = new Faculty(&quot;&quot;, &quot;&quot;, &quot;hi!&quot;);</span>
+<span class="fc" id="L184">        boolean boolean10 = faculty9.isStaff();</span>
+<span class="fc" id="L185">        java.lang.String str11 = faculty9.getName();</span>
+<span class="fc" id="L186">        faculty3.tryRegister((User) faculty9);</span>
+<span class="pc bpc" id="L187" title="1 of 2 branches missed.">        org.junit.Assert.assertTrue(&quot;'&quot; + boolean4 + &quot;' != '&quot; + false + &quot;'&quot;, boolean4 == false);</span>
+<span class="fc" id="L188">        org.junit.Assert.assertEquals(&quot;'&quot; + str5 + &quot;' != '&quot; + &quot;&quot; + &quot;'&quot;, str5, &quot;&quot;);</span>
+<span class="pc bpc" id="L189" title="1 of 2 branches missed.">        org.junit.Assert.assertTrue(&quot;'&quot; + boolean10 + &quot;' != '&quot; + false + &quot;'&quot;, boolean10 == false);</span>
+<span class="fc" id="L190">        org.junit.Assert.assertEquals(&quot;'&quot; + str11 + &quot;' != '&quot; + &quot;&quot; + &quot;'&quot;, str11, &quot;&quot;);</span>
+<span class="fc" id="L191">    }</span>
+
+    @Test
+    public void test19() throws Throwable {
+<span class="pc bpc" id="L195" title="1 of 2 branches missed.">        if (debug)</span>
+<span class="nc" id="L196">            System.out.format(&quot;%n%s%n&quot;, &quot;RegressionTest0.test19&quot;);</span>
+<span class="fc" id="L197">        PhysicalItem physicalItem6 = new PhysicalItem(&quot;hi!&quot;, (int) (byte) 0, &quot;&quot;, (double) ' ', false, false);</span>
+<span class="fc" id="L198">        double double7 = physicalItem6.getPrice();</span>
+<span class="pc bpc" id="L199" title="1 of 2 branches missed.">        org.junit.Assert.assertTrue(&quot;'&quot; + double7 + &quot;' != '&quot; + 32.0d + &quot;'&quot;, double7 == 32.0d);</span>
+<span class="fc" id="L200">    }</span>
+
+    @Test
+    public void test20() throws Throwable {
+<span class="pc bpc" id="L204" title="1 of 2 branches missed.">        if (debug)</span>
+<span class="nc" id="L205">            System.out.format(&quot;%n%s%n&quot;, &quot;RegressionTest0.test20&quot;);</span>
+<span class="fc" id="L206">        MagazineNewspaper magazineNewspaper2 = new MagazineNewspaper(&quot;hi!&quot;, (int) (short) 0);</span>
+<span class="fc" id="L207">        int int3 = magazineNewspaper2.getRentalDuration();</span>
+<span class="pc bpc" id="L208" title="1 of 2 branches missed.">        org.junit.Assert.assertTrue(&quot;'&quot; + int3 + &quot;' != '&quot; + 0 + &quot;'&quot;, int3 == 0);</span>
+<span class="fc" id="L209">    }</span>
+
+    @Test
+    public void test21() throws Throwable {
+<span class="pc bpc" id="L213" title="1 of 2 branches missed.">        if (debug)</span>
+<span class="nc" id="L214">            System.out.format(&quot;%n%s%n&quot;, &quot;RegressionTest0.test21&quot;);</span>
+<span class="fc" id="L215">        Faculty faculty3 = new Faculty(&quot;&quot;, &quot;&quot;, &quot;hi!&quot;);</span>
+<span class="fc" id="L216">        ManagementTeam managementTeam4 = null;</span>
+<span class="fc" id="L217">        faculty3.setMt(managementTeam4);</span>
+<span class="fc" id="L218">        int int6 = faculty3.getID();</span>
+// flaky:         org.junit.Assert.assertTrue(&quot;'&quot; + int6 + &quot;' != '&quot; + 9 + &quot;'&quot;, int6 == 9);
+<span class="fc" id="L220">    }</span>
+
+    @Test
+    public void test22() throws Throwable {
+<span class="pc bpc" id="L224" title="1 of 2 branches missed.">        if (debug)</span>
+<span class="nc" id="L225">            System.out.format(&quot;%n%s%n&quot;, &quot;RegressionTest0.test22&quot;);</span>
+<span class="fc" id="L226">        PhysicalItem physicalItem6 = new PhysicalItem(&quot;hi!&quot;, (int) (short) -1, &quot;&quot;, (double) 1, false, false);</span>
+<span class="fc" id="L227">        java.lang.String str7 = physicalItem6.getType();</span>
+<span class="fc" id="L228">        double double8 = physicalItem6.getPrice();</span>
+<span class="fc" id="L229">        int int9 = physicalItem6.getItemID();</span>
+<span class="fc" id="L230">        org.junit.Assert.assertEquals(&quot;'&quot; + str7 + &quot;' != '&quot; + &quot;PhysicalItem&quot; + &quot;'&quot;, str7, &quot;PhysicalItem&quot;);</span>
+<span class="pc bpc" id="L231" title="1 of 2 branches missed.">        org.junit.Assert.assertTrue(&quot;'&quot; + double8 + &quot;' != '&quot; + 1.0d + &quot;'&quot;, double8 == 1.0d);</span>
+<span class="pc bpc" id="L232" title="1 of 2 branches missed.">        org.junit.Assert.assertTrue(&quot;'&quot; + int9 + &quot;' != '&quot; + (-1) + &quot;'&quot;, int9 == (-1));</span>
+<span class="fc" id="L233">    }</span>
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.11.202310140853</span>Merged (Apr. 8, 2024 9:28:37 a.m.)</div></body></html>

@@ -55,13 +55,13 @@ public class LibraryTest {
 
     @Test
     public void testItem() {
-        Item book = new OnlineTextbook("Java Basics", 1, "Author Name", 19.99, false, true);
+        Item book = new OnlineTextbook("Java Basics", 1, "John Atmar", 19.99, false, true);
         double delta = 0.0001;
         assertEquals(book.getName(),"Java Basics");
         assertEquals( book.getPrice(),19.99,delta);
         assertEquals(book.getType(),"OnlineTextbook");
 
-        Item magazine = new MagazineNewspaper("Tech Today", 1, "Editor Name", 5.99, false, true);
+        Item magazine = new MagazineNewspaper("Tech Today", 1, "Mirlan Aliovic", 5.99, false, true);
         assertEquals( magazine.getName(),"Tech Today");
         assertEquals(magazine.getPrice(),5.99 ,delta);
         assertEquals( magazine.getType(),"MagazineNewspaper");
@@ -144,7 +144,7 @@ public class LibraryTest {
 
     @Test
     public void testPay() {
-        Payment cardPayment = new CreditDebit("Enes Yesil", "12345467690123456", "123", "12/34");
+        Payment cardPayment = new CreditDebit("Enes Yesil", "1234534934690123456", "123", "12/34");
         String paymentResult1 = cardPayment.pay(100.0);
 
         assertEquals("100.0 paid with credit/debit card", paymentResult1);
@@ -170,7 +170,7 @@ public class LibraryTest {
         assertEquals( result,"$100.0 paid in cash." );
 
         Checkout checkout2 = new Checkout();
-        Payment cardPayment = new CreditDebit("Jane Doe", "9876543210987654", "321", "01/25");
+        Payment cardPayment = new CreditDebit("Enes Yesil", "9876543210987654", "321", "01/25");
         double totalCost2 = 200.0;
         checkout2.totalCost = totalCost2;
 
@@ -183,7 +183,7 @@ public class LibraryTest {
 
     @Test
     public void testRent() {
-        // Setup
+        
         Rent rent = new Rent();
         User user = new User();
         rent.OverdueCost = 5.0;
